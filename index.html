@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grupo de Desafios para Nutricionistas: criação, lançamento e implementação em até 21 dias</title>
+<meta name="description" content="Eu crio, lanço e implemento o seu grupo de desafios para nutricionistas em até 21 dias, do planejamento até o último dia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F6F3EC;
+    --paper-2:#EFEAE0;
+    --ink:#1E2A22;
+    --ink-soft:#3A4A3F;
+    --sage-deep:#3D5340;
+    --gold:#B08D53;
+    --gold-soft:#D9C39B;
+    --hair:#D8D2C2;
+    --serif:'Lora', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--paper);color:#000;
+    font-family:var(--sans);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
+  h1,h2,h3{font-family:var(--serif);margin:0;}
+  h1{color:var(--ink);}
+  h2{color:#000;}
+  p{margin:0 0 16px;}
+
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:600;color:var(--sage-deep);
+    background:var(--gold-soft);border:1px solid var(--gold);
+    padding:6px 14px;border-radius:20px;margin-bottom:18px;
+  }
+
+  .btn{
+    display:inline-block;background:var(--sage-deep);color:var(--paper);
+    font-family:var(--sans);font-weight:600;font-size:17px;
+    padding:16px 30px;border-radius:6px;text-decoration:none;border:none;
+    cursor:pointer;transition:background .15s ease;
+  }
+  .btn:hover{background:var(--ink);}
+
+  /* HERO */
+  .hero{
+    background:linear-gradient(180deg,var(--paper-2) 0%,var(--paper) 70%);
+    padding:64px 0 48px;border-bottom:1px solid var(--hair);
+  }
+  .hero h1{font-size:40px;line-height:1.15;font-weight:600;letter-spacing:-0.01em;margin-bottom:20px;}
+  .hero .sub{font-size:19px;max-width:56ch;margin-bottom:14px;}
+  .hero .reforco{font-family:var(--serif);font-style:italic;font-size:20px;margin-bottom:32px;}
+
+  /* CARDS DE DESTAQUE */
+  .metrics{display:flex;gap:14px;margin-top:48px;flex-wrap:wrap;}
+  .metrics .card{
+    flex:1 1 180px;text-align:center;padding:26px 14px;background:#fff;
+    border:1px solid var(--hair);border-radius:10px;
+    box-shadow:0 6px 16px rgba(30,42,34,0.05);
+  }
+  .metrics .icon{
+    width:44px;height:44px;margin:0 auto 12px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--sage-deep);border-radius:50%;color:var(--gold-soft);
+  }
+  .metrics .num{font-family:var(--serif);font-size:24px;margin-bottom:4px;}
+  .metrics .lab{font-size:13px;line-height:1.4;}
+
+  /* BLOCOS */
+  section.block{padding:64px 0;border-bottom:1px solid var(--hair);}
+  section.block.tint{background:var(--paper-2);}
+  .block h2{font-size:29px;line-height:1.25;font-weight:600;margin-bottom:22px;}
+  .lead{font-size:19px;}
+
+  /* ESCURO (checklist e público) */
+  .dark{background:var(--sage-deep);border-bottom:none;}
+  .dark h2{color:var(--paper);}
+  .dark .item{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.15);
+    font-size:16px;color:var(--paper);
+  }
+  .dark .item:last-child{border-bottom:none;}
+  .dark .mark{color:var(--gold-soft);font-family:var(--serif);font-size:18px;flex-shrink:0;}
+
+  /* LISTA CLARA (para quem é) */
+  .lista{list-style:none;margin:0;padding:0;}
+  .lista li{
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--hair);font-size:16px;
+  }
+  .lista li:last-child{border-bottom:none;}
+  .lista .mark{font-family:var(--serif);font-size:18px;flex-shrink:0;}
+
+  /* FRASE CENTRAL */
+  .frase{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;margin-bottom:18px;}
+
+  /* CTA (caixa escura, padrão da oferta do modelo) */
+  .cta-box{
+    background:var(--ink);color:var(--paper);border-radius:12px;
+    padding:42px 32px;text-align:center;
+  }
+  .cta-box h2{color:var(--paper);font-size:26px;margin-bottom:14px;}
+  .cta-box .pre{color:#c9d0c9;margin-bottom:22px;}
+  .cta-list{list-style:none;margin:0 0 6px;padding:0;text-align:left;max-width:320px;margin-left:auto;margin-right:auto;}
+  .cta-list li{
+    display:flex;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;
+  }
+  .cta-list li:last-child{border-bottom:none;}
+  .cta-box .btn{width:100%;max-width:380px;margin-top:26px;}
+
+  .aviso{font-size:13px;color:var(--ink-soft);margin-top:28px;}
+
+  footer{padding:32px 0;text-align:center;font-size:12px;}
+
+  @media(max-width:640px){
+    body{font-size:16px;}
+    .wrap{padding:0 18px;}
+    .hero{padding:44px 0 36px;}
+    .hero h1{font-size:28px;}
+    .hero .sub{font-size:17px;}
+    .hero .reforco{font-size:18px;}
+    section.block{padding:44px 0;}
+    .block h2{font-size:22px;}
+    .metrics{gap:10px;}
+    .metrics .card{flex:1 1 30%;padding:18px 10px;}
+    .metrics .num{font-size:17px;}
+    .metrics .lab{font-size:11px;}
+    .btn{width:100%;text-align:center;padding:15px 20px;font-size:16px;}
+    .cta-box{padding:32px 20px;}
+    .cta-box h2{font-size:22px;}
+    .frase{font-size:19px;}
+  }
+  @media(max-width:380px){
+    .hero h1{font-size:24px;}
+    .metrics .card{flex:1 1 100%;}
+  }
+</style>
+
+<!-- Meta Pixel: troque SEU_PIXEL_ID pelo ID do seu pixel antes de publicar -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+
+</head>
+<body>
+
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">PARA NUTRICIONISTAS QUE QUEREM PARAR DE DEPENDER DE INDICAÇÃO</p>
+    <h1>Você já pensou em lançar um grupo de desafios para atrair pacientes, mas sempre trava na hora de montar tudo?</h1>
+    <p class="sub">Eu te ajudo a criar, lançar e implementar o seu grupo de desafios em 21 dias ou menos. Você não precisa começar do zero nem virar designer.</p>
+    <p class="reforco">Grupos bem conduzido para publico frio (ou quente) é exatamente o que você precisa para ter previsibilidade de faturamento.</p>
+    <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn" target="_blank" rel="noopener">Quero criar meu grupo</a>
+
+    <div class="metrics">
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <div class="num">21 dias</div>
+        <div class="lab">ou menos, do planejamento à primeira turma</div>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H8l-4 4V5Z"/></svg>
+        </div>
+        <div class="num">14 dias</div>
+        <div class="lab">de desafio, com um hábito por dia</div>
+      </div>
+      <div class="card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>
+        </div>
+        <div class="num">1 grupo</div>
+        <div class="lab">com começo, meio e fim, pronto para conduzir</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NÓS VAMOS JUNTAS ================= -->
+<section class="block dark">
+  <div class="wrap">
+    <h2>Nós vamos juntos</h2>
+    <div class="item"><span class="mark">-</span> Definir o nicho e a oferta que o público procura agora</div>
+    <div class="item"><span class="mark">-</span> Criar os desafios e as regras do grupo</div>
+    <div class="item"><span class="mark">-</span> Montar o material e revisar a segurança de cada conteúdo</div>
+    <div class="item"><span class="mark">-</span> Configurar a divulgação e o tráfego</div>
+    <div class="item"><span class="mark">-</span> Conduzir o grupo do dia 1 ao encerramento, com roteiro pronto</div>
+    <div class="item"><span class="mark">-</span> Organizar a passagem das participantes interessadas para consulta</div>
+  </div>
+</section>
+
+<!-- ================= PARA QUEM É ================= -->
+<section class="block tint">
+  <div class="wrap">
+    <h2>Se você é:</h2>
+    <ul class="lista">
+      <li><span class="mark">-</span> Nutricionista que já pensou em lançar um grupo de desafios e não saiu do planejamento</li>
+      <li><span class="mark">-</span> Profissional com boas ideias, mas sem tempo ou estrutura para montar tudo sozinha</li>
+      <li><span class="mark">-</span> Quem quer atrair pacientes de forma organizada, e não só publicar e esperar</li>
+      <li><span class="mark">-</span> Quem quer mostrar o trabalho na prática, antes de vender o acompanhamento</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FRASE CENTRAL ================= -->
+<section class="block">
+  <div class="wrap">
+    <p class="frase">Grupos bem conduzido para publico frio (ou quente) é exatamente o que você precisa para ter previsibilidade de faturamento.</p>
+    <p>Não falta ideia. Falta estrutura para transformar a ideia em um grupo com participantes engajadas e uma conversa que leva à consulta.</p>
+    <p>O grupo de desafios não substitui consulta e não promete resultado específico de peso ou saúde. Ele mostra o seu trabalho e leva a pessoa para a conversa com você, no ritmo dela.</p>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section class="block tint" id="contato">
+  <div class="wrap">
+    <div class="cta-box">
+      <h2>Se quiser implementar o seu, chame no WhatsApp que eu te passo:</h2>
+      <p class="pre">Tudo o que você precisa saber para decidir com segurança.</p>
+      <ul class="cta-list">
+        <li>✅ Investimento</li>
+        <li>✅ Requisitos</li>
+        <li>✅ Próximos passos</li>
+      </ul>
+      <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn" target="_blank" rel="noopener">Chamar no WhatsApp</a>
+    </div>
+    <p class="aviso">Todo material do grupo passa por revisão de segurança antes de ser publicado para o seu público.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © 2026. Todos os direitos reservados.
+  </div>
+</footer>
+
+</body>
+</html>
