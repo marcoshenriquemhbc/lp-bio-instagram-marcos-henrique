@@ -41,6 +41,7 @@
     display:inline-block;font-size:13px;font-weight:600;color:var(--sage-deep);
     background:var(--gold-soft);border:1px solid var(--gold);
     padding:6px 14px;border-radius:20px;margin-bottom:18px;
+    letter-spacing:0.04em;
   }
 
   .btn{
@@ -66,7 +67,10 @@
     background:var(--white);
     padding:64px 0 48px;border-bottom:1px solid var(--hair);
   }
-  .hero h1{font-size:40px;line-height:1.15;font-weight:600;letter-spacing:-0.01em;margin-bottom:20px;}
+  .hero h1{
+    font-size:40px;line-height:1.2;font-weight:600;letter-spacing:-0.01em;margin-bottom:24px;
+    text-wrap:balance;max-width:24ch;
+  }
   .hero .sub{font-size:19px;max-width:56ch;margin-bottom:14px;}
   .hero .reforco{font-family:var(--serif);font-style:italic;font-size:20px;margin-bottom:32px;}
 
@@ -111,7 +115,17 @@
 
   /* FRASE CENTRAL */
   .frase{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;margin-bottom:18px;color:var(--black);}
-  .segredo{font-family:var(--serif);font-weight:600;font-size:20px;margin-top:32px;margin-bottom:12px;color:var(--black);}
+
+  /* BLOCO INVERTIDO (QUAL O NOSSO SEGREDO) */
+  .segredo-box{
+    background:var(--black);color:var(--white);
+    border-radius:12px;padding:40px 32px;margin-top:32px;
+  }
+  .segredo-box p{color:var(--white);}
+  .segredo{
+    font-family:var(--serif);font-weight:600;font-size:20px;
+    margin-top:0;margin-bottom:12px;color:var(--white);
+  }
 
   /* CTA (caixa escura, padrão da oferta do modelo) */
   .cta-box{
@@ -135,7 +149,7 @@
     body{font-size:16px;}
     .wrap{padding:0 18px;}
     .hero{padding:44px 0 36px;}
-    .hero h1{font-size:28px;}
+    .hero h1{font-size:27px;line-height:1.25;max-width:none;}
     .hero .sub{font-size:17px;}
     .hero .reforco{font-size:18px;}
     section.block{padding:44px 0;}
@@ -146,6 +160,7 @@
     .metrics .lab{font-size:11px;}
     .btn{width:100%;text-align:center;padding:15px 20px;font-size:16px;}
     .btn-lg{font-size:17px;padding:19px 22px;}
+    .segredo-box{padding:30px 22px;}
     .cta-box{padding:32px 20px;}
     .cta-box h2{font-size:22px;}
     .frase{font-size:19px;}
@@ -178,10 +193,10 @@ fbq('track', 'PageView');
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
-    <p class="eyebrow">PARA NUTRICIONISTAS QUE QUEREM PARAR DE DEPENDER DE INDICAÇÃO</p>
+    <p class="eyebrow">EXCLUSIVO PARA NUTRICIONISTAS</p>
     <h1>Você já pensou em lançar um grupo de desafios para atrair novos pacientes com previsibilidade, mas sempre trava na hora de implementar tudo sozinha?</h1>
     <p class="sub">Eu te ajudo a criar, lançar e implementar o seu grupo de desafios em 21 dias ou menos. Você não precisa começar do zero, não precisa virar designer e muito menos ter muitos seguidores.</p>
-    <p class="reforco">Grupos bem conduzido para publico frio (ou quente) é exatamente o que você precisa para ter previsibilidade de faturamento.</p>
+    <p class="reforco">Grupos bem conduzidos para público frio (ou quente) são exatamente o que você precisa para ter previsibilidade de faturamento.</p>
     <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn btn-lg" target="_blank" rel="noopener">Quero Criar o meu Grupo de Desafios de Alta Conversão</a>
 
     <div class="metrics">
@@ -243,11 +258,13 @@ fbq('track', 'PageView');
     <p>O grupo de desafios não substitui uma consulta nem promete resultados rápidos relacionados ao peso ou à saúde. Ele apresenta possibilidades e caminhos mais eficientes para alcançar os objetivos desejados.</p>
     <p>Além de apresentar o seu trabalho antes da venda, essa é uma das melhores estratégias de segmentação: separar as pessoas que realmente querem alcançar resultados (e estão dispostas a fazer o que é necessário para isso) daquelas que são apenas espectadoras do Instagram, que ficam rolando o feed sem uma intenção real de mudança.</p>
 
-    <p class="segredo">QUAL O NOSSO SEGREDO?</p>
-    <p>De forma simples e objetiva: identificamos, por meio de pesquisa, o que já está vendendo no seu mercado. A partir disso, desenvolvemos uma nova oferta, estruturamos o seu desafio e implementamos tudo juntos.</p>
-    <p>Simples assim.</p>
-    <p>Quando descobrimos o que já funciona e gera vendas rápidas no mercado, não precisamos começar do zero nem depender de suposições. Isso nos permite tomar decisões mais assertivas em cada elemento do seu marketing, reduzir erros e aumentar as chances de fazer um desafio lucrativo desde a primeira campanha.</p>
-    <p>Em vez de testar tudo no escuro, partimos de estratégias que já demonstraram potencial de venda rápida.</p>
+    <div class="segredo-box">
+      <p class="segredo">QUAL O NOSSO SEGREDO?</p>
+      <p>De forma simples e objetiva: identificamos, por meio de pesquisa, o que já está vendendo no seu mercado. A partir disso, desenvolvemos uma nova oferta, estruturamos o seu desafio e implementamos tudo juntos.</p>
+      <p>Simples assim.</p>
+      <p>Quando descobrimos o que já funciona e gera vendas rápidas no mercado, não precisamos começar do zero nem depender de suposições. Isso nos permite tomar decisões mais assertivas em cada elemento do seu marketing, reduzir erros e aumentar as chances de fazer um desafio lucrativo desde a primeira campanha.</p>
+      <p style="margin-bottom:0;">Em vez de testar tudo no escuro, partimos de estratégias que já demonstraram potencial de venda rápida.</p>
+    </div>
   </div>
 </section>
 
