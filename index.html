@@ -71,6 +71,13 @@
     font-size:40px;line-height:1.2;font-weight:600;letter-spacing:-0.01em;margin-bottom:24px;
     text-wrap:balance;max-width:24ch;
   }
+  .hero h1 .destaque{
+    display:inline;
+    background:var(--gold-soft);color:var(--ink);
+    padding:0 .25em;border-radius:8px;
+    box-decoration-break:clone;-webkit-box-decoration-break:clone;
+    box-shadow:inset 0 -0.45em 0 rgba(176,141,83,0.45);
+  }
   .hero .sub{font-size:19px;max-width:56ch;margin-bottom:14px;}
   .hero .reforco{font-family:var(--serif);font-style:italic;font-size:20px;margin-bottom:32px;}
 
@@ -121,10 +128,11 @@
     background:var(--black);color:var(--white);
     border-radius:12px;padding:40px 32px;margin-top:32px;
   }
-  .segredo-box p{color:var(--white);}
+  .segredo-box p{color:var(--white);margin-bottom:22px;}
+  .segredo-box p:last-child{margin-bottom:0;}
   .segredo{
     font-family:var(--serif);font-weight:600;font-size:20px;
-    margin-top:0;margin-bottom:12px;color:var(--white);
+    margin-top:0;margin-bottom:22px;color:var(--white);
   }
 
   /* CTA (caixa escura, padrão da oferta do modelo) */
@@ -150,6 +158,7 @@
     .wrap{padding:0 18px;}
     .hero{padding:44px 0 36px;}
     .hero h1{font-size:27px;line-height:1.25;max-width:none;}
+    .hero h1 .destaque{padding:0 .2em;}
     .hero .sub{font-size:17px;}
     .hero .reforco{font-size:18px;}
     section.block{padding:44px 0;}
@@ -194,7 +203,7 @@ fbq('track', 'PageView');
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">EXCLUSIVO PARA NUTRICIONISTAS</p>
-    <h1>Você já pensou em lançar um grupo de desafios para atrair novos pacientes com previsibilidade, mas sempre trava na hora de implementar tudo sozinha?</h1>
+    <h1>Você já pensou em <span class="destaque">lançar um grupo de desafios para atrair novos pacientes</span> com previsibilidade, mas sempre trava na hora de implementar tudo sozinha?</h1>
     <p class="sub">Eu te ajudo a criar, lançar e implementar o seu grupo de desafios em 21 dias ou menos. Você não precisa começar do zero, não precisa virar designer e muito menos ter muitos seguidores.</p>
     <p class="reforco">Grupos bem conduzidos para público frio (ou quente) são exatamente o que você precisa para ter previsibilidade de faturamento.</p>
     <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn btn-lg" target="_blank" rel="noopener">Quero Criar o meu Grupo de Desafios de Alta Conversão</a>
@@ -263,7 +272,7 @@ fbq('track', 'PageView');
       <p>De forma simples e objetiva: identificamos, por meio de pesquisa, o que já está vendendo no seu mercado. A partir disso, desenvolvemos uma nova oferta, estruturamos o seu desafio e implementamos tudo juntos.</p>
       <p>Simples assim.</p>
       <p>Quando descobrimos o que já funciona e gera vendas rápidas no mercado, não precisamos começar do zero nem depender de suposições. Isso nos permite tomar decisões mais assertivas em cada elemento do seu marketing, reduzir erros e aumentar as chances de fazer um desafio lucrativo desde a primeira campanha.</p>
-      <p style="margin-bottom:0;">Em vez de testar tudo no escuro, partimos de estratégias que já demonstraram potencial de venda rápida.</p>
+      <p>Em vez de testar tudo no escuro, partimos de estratégias que já demonstraram potencial de venda rápida.</p>
     </div>
   </div>
 </section>
