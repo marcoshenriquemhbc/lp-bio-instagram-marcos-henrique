@@ -11,6 +11,7 @@
 
 <style>
   :root{
+    --white:#FFFFFF;
     --paper:#F6F3EC;
     --paper-2:#EFEAE0;
     --ink:#1E2A22;
@@ -19,20 +20,21 @@
     --gold:#B08D53;
     --gold-soft:#D9C39B;
     --hair:#D8D2C2;
+    --black:#000000;
     --serif:'Lora', Georgia, serif;
     --sans:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;background:var(--paper);color:#000;
+    margin:0;background:var(--white);color:var(--black);
     font-family:var(--sans);font-size:17px;line-height:1.6;
     -webkit-font-smoothing:antialiased;
   }
   .wrap{max-width:720px;margin:0 auto;padding:0 24px;}
   h1,h2,h3{font-family:var(--serif);margin:0;}
-  h1{color:var(--ink);}
-  h2{color:#000;}
+  h1{color:var(--black);}
+  h2{color:var(--black);}
   p{margin:0 0 16px;}
 
   .eyebrow{
@@ -49,9 +51,19 @@
   }
   .btn:hover{background:var(--ink);}
 
+  /* BOTÃO GRANDE (hero) */
+  .btn-lg{
+    font-size:19px;
+    padding:22px 44px;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(30,42,34,0.18);
+    line-height:1.3;
+    max-width:100%;
+  }
+
   /* HERO */
   .hero{
-    background:linear-gradient(180deg,var(--paper-2) 0%,var(--paper) 70%);
+    background:var(--white);
     padding:64px 0 48px;border-bottom:1px solid var(--hair);
   }
   .hero h1{font-size:40px;line-height:1.15;font-weight:600;letter-spacing:-0.01em;margin-bottom:20px;}
@@ -61,7 +73,7 @@
   /* CARDS DE DESTAQUE */
   .metrics{display:flex;gap:14px;margin-top:48px;flex-wrap:wrap;}
   .metrics .card{
-    flex:1 1 180px;text-align:center;padding:26px 14px;background:#fff;
+    flex:1 1 180px;text-align:center;padding:26px 14px;background:var(--paper-2);
     border:1px solid var(--hair);border-radius:10px;
     box-shadow:0 6px 16px rgba(30,42,34,0.05);
   }
@@ -70,8 +82,8 @@
     display:flex;align-items:center;justify-content:center;
     background:var(--sage-deep);border-radius:50%;color:var(--gold-soft);
   }
-  .metrics .num{font-family:var(--serif);font-size:24px;margin-bottom:4px;}
-  .metrics .lab{font-size:13px;line-height:1.4;}
+  .metrics .num{font-family:var(--serif);font-size:24px;margin-bottom:4px;color:var(--black);}
+  .metrics .lab{font-size:13px;line-height:1.4;color:var(--black);}
 
   /* BLOCOS */
   section.block{padding:64px 0;border-bottom:1px solid var(--hair);}
@@ -92,13 +104,14 @@
   /* LISTA CLARA (para quem é) */
   .lista{list-style:none;margin:0;padding:0;}
   .lista li{
-    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--hair);font-size:16px;
+    display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--hair);font-size:16px;color:var(--black);
   }
   .lista li:last-child{border-bottom:none;}
-  .lista .mark{font-family:var(--serif);font-size:18px;flex-shrink:0;}
+  .lista .mark{font-family:var(--serif);font-size:18px;flex-shrink:0;color:var(--black);}
 
   /* FRASE CENTRAL */
-  .frase{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;margin-bottom:18px;}
+  .frase{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;margin-bottom:18px;color:var(--black);}
+  .segredo{font-family:var(--serif);font-weight:600;font-size:20px;margin-top:32px;margin-bottom:12px;color:var(--black);}
 
   /* CTA (caixa escura, padrão da oferta do modelo) */
   .cta-box{
@@ -114,9 +127,9 @@
   .cta-list li:last-child{border-bottom:none;}
   .cta-box .btn{width:100%;max-width:380px;margin-top:26px;}
 
-  .aviso{font-size:13px;color:var(--ink-soft);margin-top:28px;}
+  .aviso{font-size:13px;color:var(--black);margin-top:28px;}
 
-  footer{padding:32px 0;text-align:center;font-size:12px;}
+  footer{padding:32px 0;text-align:center;font-size:12px;color:var(--black);}
 
   @media(max-width:640px){
     body{font-size:16px;}
@@ -132,9 +145,11 @@
     .metrics .num{font-size:17px;}
     .metrics .lab{font-size:11px;}
     .btn{width:100%;text-align:center;padding:15px 20px;font-size:16px;}
+    .btn-lg{font-size:17px;padding:19px 22px;}
     .cta-box{padding:32px 20px;}
     .cta-box h2{font-size:22px;}
     .frase{font-size:19px;}
+    .segredo{font-size:18px;}
   }
   @media(max-width:380px){
     .hero h1{font-size:24px;}
@@ -164,10 +179,10 @@ fbq('track', 'PageView');
 <section class="hero">
   <div class="wrap">
     <p class="eyebrow">PARA NUTRICIONISTAS QUE QUEREM PARAR DE DEPENDER DE INDICAÇÃO</p>
-    <h1>Você já pensou em lançar um grupo de desafios para atrair pacientes, mas sempre trava na hora de montar tudo?</h1>
-    <p class="sub">Eu te ajudo a criar, lançar e implementar o seu grupo de desafios em 21 dias ou menos. Você não precisa começar do zero nem virar designer.</p>
+    <h1>Você já pensou em lançar um grupo de desafios para atrair novos pacientes com previsibilidade, mas sempre trava na hora de implementar tudo sozinha?</h1>
+    <p class="sub">Eu te ajudo a criar, lançar e implementar o seu grupo de desafios em 21 dias ou menos. Você não precisa começar do zero, não precisa virar designer e muito menos ter muitos seguidores.</p>
     <p class="reforco">Grupos bem conduzido para publico frio (ou quente) é exatamente o que você precisa para ter previsibilidade de faturamento.</p>
-    <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn" target="_blank" rel="noopener">Quero criar meu grupo</a>
+    <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn btn-lg" target="_blank" rel="noopener">Quero Criar o meu Grupo de Desafios de Alta Conversão</a>
 
     <div class="metrics">
       <div class="card">
@@ -175,21 +190,21 @@ fbq('track', 'PageView');
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
         </div>
         <div class="num">21 dias</div>
-        <div class="lab">ou menos, do planejamento à primeira turma</div>
+        <div class="lab">do planejamento à primeira campanha pronta para repetir.</div>
       </div>
       <div class="card">
         <div class="icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v12H8l-4 4V5Z"/></svg>
         </div>
         <div class="num">14 dias</div>
-        <div class="lab">de desafio, com um hábito por dia</div>
+        <div class="lab">Um desafio de 14 dias de alta conversão.</div>
       </div>
       <div class="card">
         <div class="icon">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/></svg>
         </div>
         <div class="num">1 grupo</div>
-        <div class="lab">com começo, meio e fim, pronto para conduzir</div>
+        <div class="lab">com começo, meio e fim, pronto para conduzir e converter.</div>
       </div>
     </div>
   </div>
@@ -199,12 +214,12 @@ fbq('track', 'PageView');
 <section class="block dark">
   <div class="wrap">
     <h2>Nós vamos juntos</h2>
-    <div class="item"><span class="mark">-</span> Definir o nicho e a oferta que o público procura agora</div>
-    <div class="item"><span class="mark">-</span> Criar os desafios e as regras do grupo</div>
-    <div class="item"><span class="mark">-</span> Montar o material e revisar a segurança de cada conteúdo</div>
-    <div class="item"><span class="mark">-</span> Configurar a divulgação e o tráfego</div>
+    <div class="item"><span class="mark">-</span> Definir o nicho estratégico da campanha e a oferta que o público já quer comprar imediatamente.</div>
+    <div class="item"><span class="mark">-</span> Criar o passo a passo do desafio e as regras do grupo.</div>
+    <div class="item"><span class="mark">-</span> Definir o material e revisar a segurança de cada conteúdo e orientação.</div>
+    <div class="item"><span class="mark">-</span> Definir o plano de divulgação e configurar as campanhas de tráfego pago.</div>
     <div class="item"><span class="mark">-</span> Conduzir o grupo do dia 1 ao encerramento, com roteiro pronto</div>
-    <div class="item"><span class="mark">-</span> Organizar a passagem das participantes interessadas para consulta</div>
+    <div class="item"><span class="mark">-</span> Organizar o comercial definindo as ações estratégicas para converter os participantes interessados para consulta, acompanhamento ou seu produto digital.</div>
   </div>
 </section>
 
@@ -215,8 +230,8 @@ fbq('track', 'PageView');
     <ul class="lista">
       <li><span class="mark">-</span> Nutricionista que já pensou em lançar um grupo de desafios e não saiu do planejamento</li>
       <li><span class="mark">-</span> Profissional com boas ideias, mas sem tempo ou estrutura para montar tudo sozinha</li>
-      <li><span class="mark">-</span> Quem quer atrair pacientes de forma organizada, e não só publicar e esperar</li>
-      <li><span class="mark">-</span> Quem quer mostrar o trabalho na prática, antes de vender o acompanhamento</li>
+      <li><span class="mark">-</span> Quem quer atrair novos pacientes de forma previsível, e não só publicar e esperar.</li>
+      <li><span class="mark">-</span> Quem quer vender, construir autoridade e ter um processo de conversão que permite ter previsibilidade mesmo sem ter grandes audiências.</li>
     </ul>
   </div>
 </section>
@@ -224,9 +239,15 @@ fbq('track', 'PageView');
 <!-- ================= FRASE CENTRAL ================= -->
 <section class="block">
   <div class="wrap">
-    <p class="frase">Grupos bem conduzido para publico frio (ou quente) é exatamente o que você precisa para ter previsibilidade de faturamento.</p>
-    <p>Não falta ideia. Falta estrutura para transformar a ideia em um grupo com participantes engajadas e uma conversa que leva à consulta.</p>
-    <p>O grupo de desafios não substitui consulta e não promete resultado específico de peso ou saúde. Ele mostra o seu trabalho e leva a pessoa para a conversa com você, no ritmo dela.</p>
+    <p class="frase">Não falta ideia. Falta estrutura e estratégia para transformar a ideia em um grupo com participantes engajados e uma conversa que leva à conversão para a sua oferta.</p>
+    <p>O grupo de desafios não substitui uma consulta nem promete resultados rápidos relacionados ao peso ou à saúde. Ele apresenta possibilidades e caminhos mais eficientes para alcançar os objetivos desejados.</p>
+    <p>Além de apresentar o seu trabalho antes da venda, essa é uma das melhores estratégias de segmentação: separar as pessoas que realmente querem alcançar resultados (e estão dispostas a fazer o que é necessário para isso) daquelas que são apenas espectadoras do Instagram, que ficam rolando o feed sem uma intenção real de mudança.</p>
+
+    <p class="segredo">QUAL O NOSSO SEGREDO?</p>
+    <p>De forma simples e objetiva: identificamos, por meio de pesquisa, o que já está vendendo no seu mercado. A partir disso, desenvolvemos uma nova oferta, estruturamos o seu desafio e implementamos tudo juntos.</p>
+    <p>Simples assim.</p>
+    <p>Quando descobrimos o que já funciona e gera vendas rápidas no mercado, não precisamos começar do zero nem depender de suposições. Isso nos permite tomar decisões mais assertivas em cada elemento do seu marketing, reduzir erros e aumentar as chances de fazer um desafio lucrativo desde a primeira campanha.</p>
+    <p>Em vez de testar tudo no escuro, partimos de estratégias que já demonstraram potencial de venda rápida.</p>
   </div>
 </section>
 
@@ -234,7 +255,7 @@ fbq('track', 'PageView');
 <section class="block tint" id="contato">
   <div class="wrap">
     <div class="cta-box">
-      <h2>Se quiser implementar o seu, chame no WhatsApp que eu te passo:</h2>
+      <h2>Se quiser implementar o seu DESAFIO DE ALTA CONVERSÃO, me chame no WhatsApp que eu te passo:</h2>
       <p class="pre">Tudo o que você precisa saber para decidir com segurança.</p>
       <ul class="cta-list">
         <li>✅ Investimento</li>
@@ -243,7 +264,8 @@ fbq('track', 'PageView');
       </ul>
       <a href="https://wa.me/5521965944207?text=Ol%C3%A1%20Marcos%20Henrique!%20Vim%20pelo%20Instagram.%20Gostaria%20de%20entender%20melhor%20sua%20proposta%20de%20implementa%C3%A7%C3%A3o%20do%20grupo%20de%20desafios..." class="btn" target="_blank" rel="noopener">Chamar no WhatsApp</a>
     </div>
-    <p class="aviso">Todo material do grupo passa por revisão de segurança antes de ser publicado para o seu público.</p>
+    <p class="aviso">Clique em "Chamar no WhatsApp" e vamos conversar!</p>
+    <p class="aviso">Não vou fazer nenhuma venda forçada. A proposta é uma implementação a quatro mãos, em que eu entro com a estratégia e a experiência, mas você também precisa estar comprometida e disposta a fazer a sua parte para alcançar os resultados. Afinal, o sucesso desse projeto depende do nosso trabalho em conjunto.</p>
   </div>
 </section>
 
